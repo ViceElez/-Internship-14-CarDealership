@@ -21,7 +21,7 @@ const Cars=[
     id:uuid(),
     mark:"Suzuki",
     model:"Swift",
-    type:"Hatchback",
+    type:"Coupe",
     releaseYear:2021,
     regExpireDate:"2022-12-31"
     },
@@ -35,4 +35,4 @@ const Cars=[
     }
 ];
 
-export default Cars;
+export {Cars};
