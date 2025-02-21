@@ -12,7 +12,22 @@ const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
     
     useEffect(() => {
       const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
-      setCars(loadedCars);
+
+      const sortedCars = [...loadedCars].sort((a, b) =>{
+        const releaseYearComparison=b.releaseYear - a.releaseYear;
+        if(releaseYearComparison !==0){
+          return releaseYearComparison;
+        }
+
+        const markComparison = a.mark.toLowerCase().localeCompare(b.mark.toLowerCase());
+        if(markComparison !==0){
+          return markComparison;
+        }
+
+      return a.model.toLowerCase().localeCompare(b.model.toLowerCase());
+      });
+
+      setCars(sortedCars);
     }, []);
 
     return (
@@ -34,7 +49,6 @@ const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
               <option value="Mark">Mark</option>
               <option value="Model">Model Year</option>
             </select>
-            <button id="filter-button" className="hidden">Apply Filter</button>
         </div>
         
         <div className="cars-card-container">

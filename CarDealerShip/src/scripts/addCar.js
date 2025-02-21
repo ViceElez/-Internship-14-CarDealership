@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid';
+import { parse, v4 as uuid } from 'uuid';
 
 export function addCarOnButtonClick(e, navigate, onAddCar){
     e.preventDefault();
@@ -28,7 +28,16 @@ export function addCarOnButtonClick(e, navigate, onAddCar){
 
     const type = document.getElementById('car-type').value;
     const releaseYear = document.getElementById('release-year').value;
+    if(parseInt(releaseYear) <1980 || parseInt(releaseYear) >new Date().getFullYear()){
+        alert(`Release year must be between 1980 and ${new Date().getFullYear()}!`);
+        return;
+
+    }
     const expiryDate = document.getElementById('reg-expire-date').value;
+    if(expiryDate<=new Date().toISOString().split('T')[0]){
+        alert("Registration expiry date must be after today!");
+        return;
+    }
 
     const carExists = Cars.some((car) => 
         car.mark === mark && car.model === model && car.type === type && 
@@ -40,7 +49,7 @@ export function addCarOnButtonClick(e, navigate, onAddCar){
         return;
     }
 
-    const car = {
+    const newCar = {
         id: uuid(),
         mark: mark,
         model: model,
@@ -49,7 +58,7 @@ export function addCarOnButtonClick(e, navigate, onAddCar){
         regExpireDate: expiryDate
     };
 
-    Cars.push(car);
+    Cars.push(newCar);
     localStorage.setItem('cars', JSON.stringify(Cars));
     alert("Car added successfully!");
     onAddCar();
@@ -58,3 +67,5 @@ export function addCarOnButtonClick(e, navigate, onAddCar){
         navigate('/landing-page');
     }, 2000);
 }
+
+//evenutalno deelte dodaj na kraju
