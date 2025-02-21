@@ -1,10 +1,12 @@
 .landing-page{
     background-color: grey;
-    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: auto;
 }
 .add-car{
     text-align: center;
@@ -19,3 +21,102 @@
     cursor: pointer;
     border-radius: 10px;
 }
+.landing-page-title{
+    text-align: center;
+    margin-top: 40px;
+    font-weight: bold;
+}
+.landing-page-title h1{
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.landing-page-filter {  
+    float: right;
+    padding: 15px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transform: translateX(-30px);
+    margin-top: -20px;
+  }
+  
+  .landing-page-filter span {
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  
+  #select-filter {
+    appearance: none;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #select-filter option {
+    font-size: 18px;
+    padding: 10px;
+  }
+  
+  #select-filter {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='black'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 18px;
+    padding-right: 30px;
+  }
+  .hidden{
+    display: none;
+  }
+  .cars-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-left: 30px;
+    transform: translateY(50px);
+}
+
+.car-card {
+    display: flex;
+    flex-direction: row; /* Keep image and text side by side */
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    align-items: center; /* ✅ Ensures vertical centering */
+    width: 98%;
+}
+
+.car-card img {
+    width: 20%;
+    height: 25%px;
+    border-radius: 10px;
+    object-fit: cover;
+    transform: translateX(60px);
+}
+
+.car-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    flex: 1;
+    text-align: center;
+   transform: translateX(-100px);
+}
+
+
+
+
+

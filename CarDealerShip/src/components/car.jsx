@@ -1,14 +1,16 @@
 
 const Car=({id,mark,model,type,releaseYear,regExpireDate})=>{
     return(
-        <div className="car">
-            <p>{id}</p>
-            <p>{mark}</p>
-            <p>{model}</p>
-            <p>{type}</p>
-            <p>{releaseYear}</p>
-            <p>{regExpireDate}</p>
+        <div className="car-card">
+        <img src="../src/assets/Images/carImgExample.avif" alt="Audi Car Image" />
+        <div className="car-info">
+          <p>Car Mark: {mark}</p>
+          <p>Car Model: {model}</p>
+          <p>Car Type: {type}</p>
+          <p>Release Year: {releaseYear}</p>
+          <p>Registration Expiry: {regExpireDate}</p>
         </div>
+      </div>
     )
 }
 

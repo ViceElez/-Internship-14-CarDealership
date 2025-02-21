@@ -17,7 +17,3 @@ export const WelcomePage = () => {
       </div>
     );
   };    
-
-  //dodaj za ssvaki auto div ko u filmovima i 
-  // ka mos stavit sliku i ka ime pa ime auta, 
-  // model pa model i tako, uglavnon nek izgleda ko onaj s filmovima

@@ -50,10 +50,13 @@ export const AddCar = () => {
                     placeholder="Registration Expiration Date"
                     required
                     />
+                    <Link to="/landing-page"> 
                     <button type="submit" id="submit-button">Add Car</button>
+                    </Link>
                 </form>
             </div>
-
         </div>
     );
 }
+
+  //odi triba dodat da nemos odma kliknoit add pa otic landing page 
