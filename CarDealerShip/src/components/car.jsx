@@ -1,7 +1,8 @@
-
 const Car=({mark,model,type,releaseYear,regExpireDate})=>{
+  const regExpireDateTime=new Date(regExpireDate);
+  const isExpired=regExpireDateTime-Date.now()<=30 * 24 * 60 * 60 * 1000;
     return(
-        <div className="car-card">
+        <div className={isExpired?"car-card expired":"car-card"}>
         <img src="../src/assets/Images/carImgExample.avif" alt="Audi Car Image" />
         <div className="car-info">
           <h3>Car Information</h3>

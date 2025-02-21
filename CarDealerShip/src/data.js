@@ -7,7 +7,7 @@ const Cars=[
     model:"Corolla",
     type:"Sedan",
     releaseYear:2021,
-    regExpireDate:"2022-12-31"
+    regExpireDate:"2025-12-31"
     },
     {
     id:uuid(),
@@ -15,7 +15,7 @@ const Cars=[
     model:"Civic",
     type:"Sedan",
     releaseYear:2022,
-    regExpireDate:"2023-12-31"
+    regExpireDate:"2025-08-10"
     },
     {
     id:uuid(),
@@ -23,7 +23,7 @@ const Cars=[
     model:"Swift",
     type:"Coupe",
     releaseYear:2021,
-    regExpireDate:"2022-12-31"
+    regExpireDate:"2025-07-15"
     },
     {
     id:uuid(),
@@ -31,7 +31,7 @@ const Cars=[
     model:'Yaris',
     type:'SUV',
     releaseYear:2021,
-    regExpireDate:'2022-12-31'
+    regExpireDate:'2025-11-30'
     }
 ];
 

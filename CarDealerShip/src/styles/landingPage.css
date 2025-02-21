@@ -96,12 +96,12 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     align-items: center; 
-    width: 98%;
+    width: 96%;
 }
 
 .car-card img {
-    width: 25%;
-    height: 25%px;
+    max-width: 25%;
+    max-height: 25%px;
     border-radius: 10px;
     object-fit: cover;
     transform: translateX(60px);
@@ -131,7 +131,10 @@
   text-shadow: 2px 2px 4px black;
   margin-top: -40px;
 }
-
+.expired{
+  border: 5px solid red;
+  width: 95%;
+}
 
 
 
