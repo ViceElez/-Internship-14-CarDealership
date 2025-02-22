@@ -2,7 +2,7 @@ import Car from './car';
 import '../styles/index.css'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import { SortCars } from '../scripts/sortingCars.js';
+import { showFilterInputs } from '../scripts/showingFilterInputs.js';
 
 
 const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
@@ -11,6 +11,20 @@ const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
 
     const [cars, setCars] = useState(() => JSON.parse(localStorage.getItem('cars')) || []);
     const[search, setSearch] = useState('');
+
+    const handleChange = (e) => {
+      setSearch(e.target.value);
+    }
+
+    let filteredCars = [];
+    if(search!=="" && search!==null){
+      filteredCars = cars.filter((car) => {
+        return car.mark.toLowerCase().includes(search.toLowerCase()) || car.model.toLowerCase().includes(search.toLowerCase());
+      });
+    }
+    else
+      filteredCars = cars;
+    
     
     useEffect(() => {
       const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
@@ -46,7 +60,7 @@ const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
 
         <div className="landing-page-filter">
             <span>Sort</span>
-            <select id="select-filter" onChange={SortCars}>
+            <select id="select-filter" onChange={showFilterInputs}>
               <option value="Default">Default</option>
               <option value="Mark">Mark</option>
               <option value="Model">Model</option>
@@ -55,19 +69,29 @@ const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
               type="text"
               id="mark-input"
               placeholder="Enter Car Mark"
-              className="hidden"
+              className="hidden "
+              onChange={handleChange}
             />
             <input
               type="text"
               id="model-input"
               placeholder="Enter Car Model"
               className="hidden"
+              onChange={handleChange}
             />
         </div>
         
         <div className="cars-card-container">
-        {cars.map((car)=>(
-          <Car key={car.id} mark={car.mark} model={car.model} type={car.type} releaseYear={car.releaseYear} regExpireDate={car.regExpireDate}/>
+        {filteredCars.map((car)=>(
+          <Car key={car.id} 
+          mark={car.mark} 
+          model={car.model} 
+          type={car.type}
+          releaseYear={car.releaseYear} 
+          regExpireDate={car.regExpireDate}
+          cars={cars}
+          setCars={setCars}
+          />
         ))}
         </div>
       </div>

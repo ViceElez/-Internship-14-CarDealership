@@ -1,4 +1,4 @@
-export function SortCars(){
+export function showFilterInputs(){
     const selectFilter = document.getElementById('select-filter');
     if(selectFilter.value==='Mark'){
         document.getElementById('mark-input').classList.remove('hidden');
