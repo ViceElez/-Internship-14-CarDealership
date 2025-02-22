@@ -62,8 +62,6 @@ export function addCarOnButtonClick(e, navigate, onAddCar){
     localStorage.setItem('cars', JSON.stringify(Cars));
     alert("Car added successfully!");
     onAddCar();
-
-    setTimeout(() => {
-        navigate('/landing-page');
-    }, 2000);
+    
+    navigate('/landing-page');
 }

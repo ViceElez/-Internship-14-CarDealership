@@ -1,19 +1,22 @@
 export function showFilterInputs(){
     const selectFilter = document.getElementById('select-filter');
-    if(selectFilter.value==='Mark'){
-        document.getElementById('mark-input').classList.remove('hidden');
-        document.getElementById('model-input').classList.add('hidden');
-        document.getElementById('model-input').value='';
+    const markInput = document.getElementById('mark-input');
+    const modelInput = document.getElementById('model-input');
 
+    if(selectFilter.value==='Mark'){
+        markInput.classList.remove('hidden');
+        modelInput.classList.add('hidden');
+        modelInput.value='';
     }
     else if(selectFilter.value==='Model'){
-        document.getElementById('model-input').classList.remove('hidden');
-        document.getElementById('mark-input').classList.add('hidden');
-        document.getElementById('mark-input').value='';
+        modelInput.classList.remove('hidden');
+        markInput.classList.add('hidden');
+        markInput.value='';
     }
     else{
-        document.getElementById('mark-input').classList.add('hidden');
-        document.getElementById('model-input').classList.add('hidden');
+        markInput.classList.add('hidden');
+        modelInput.classList.add('hidden');
+        markInput.value='';
+        modelInput.value='';
     }
-    
 }

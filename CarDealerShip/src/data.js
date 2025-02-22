@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 
-const Cars=[
+export const Cars=[
     {
     id:uuid(),
     mark:"Toyota",
@@ -35,5 +35,5 @@ const Cars=[
     }
 ];
 
-localStorage.setItem('cars', JSON.stringify(Cars));
+
 

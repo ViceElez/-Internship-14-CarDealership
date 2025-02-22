@@ -161,6 +161,16 @@
   padding: 10px;
 }
 
+.no-cars-found{
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  transform: translateY(200px);
+}
+
 
 
 
