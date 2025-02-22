@@ -107,3 +107,5 @@ const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
       </div>
     );
   };
+
+  //triba risit problem ako user ne izbrise ovo sta je filtera to malo usere sve

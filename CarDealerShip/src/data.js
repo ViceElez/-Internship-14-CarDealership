@@ -37,4 +37,3 @@ const Cars=[
 
 localStorage.setItem('cars', JSON.stringify(Cars));
 
-export {Cars};
