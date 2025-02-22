@@ -10,16 +10,26 @@ const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
  export const LandingPage = () => {
 
     const [cars, setCars] = useState(() => JSON.parse(localStorage.getItem('cars')) || []);
-    const[search, setSearch] = useState('');
+    const[searchModel, setSearchModel] = useState('');
+    const[searchMark, setSearchMark] = useState('');
 
-    const handleChange = (e) => {
-      setSearch(e.target.value);
+    const handleChangeMark = (e) => {
+      setSearchMark(e.target.value);
+    }
+
+    const handleChangeModel = (e) => {
+      setSearchModel(e.target.value);
     }
 
     let filteredCars = [];
-    if(search!=="" && search!==null){
+    if(searchMark!=="" && searchMark!==null){
       filteredCars = cars.filter((car) => {
-        return car.mark.toLowerCase().includes(search.toLowerCase()) || car.model.toLowerCase().includes(search.toLowerCase());
+        return car.mark.toLowerCase().includes(searchMark.toLowerCase());
+      });
+    }
+    else if(searchModel!=="" && searchModel!==null){
+      filteredCars = cars.filter((car) => {
+        return car.model.toLowerCase().includes(searchModel.toLowerCase());
       });
     }
     else
@@ -70,14 +80,14 @@ const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
               id="mark-input"
               placeholder="Enter Car Mark"
               className="hidden "
-              onChange={handleChange}
+              onChange={handleChangeMark}
             />
             <input
               type="text"
               id="model-input"
               placeholder="Enter Car Model"
               className="hidden"
-              onChange={handleChange}
+              onChange={handleChangeModel}
             />
         </div>
         
