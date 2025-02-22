@@ -23,7 +23,7 @@ export const Cars=[
     model:"Swift",
     type:"Coupe",
     releaseYear:2021,
-    regExpireDate:"2025-07-15"
+    regExpireDate:"2025-03-15"
     },
     {
     id:uuid(),
