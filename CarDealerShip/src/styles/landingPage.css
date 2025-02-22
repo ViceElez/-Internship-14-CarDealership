@@ -43,7 +43,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: white;
     transform: translateX(-30px);
-    margin-top: -20px;
+    margin-top: 10px;
   }
   
   .landing-page-filter span {
@@ -152,6 +152,12 @@
 .expired{
   border: 5px solid red;
   width: 95%;
+}
+.landing-page-filter input{
+  font-size: 20px;
+  border: black;
+  border-radius: 5px;
+  transform: translateX(10px);
 }
 
 

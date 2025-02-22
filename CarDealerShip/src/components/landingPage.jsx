@@ -2,6 +2,7 @@ import Car from './car';
 import '../styles/index.css'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import { SortCars } from '../scripts/sortingCars.js';
 
 
 const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
@@ -9,6 +10,7 @@ const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
  export const LandingPage = () => {
 
     const [cars, setCars] = useState(() => JSON.parse(localStorage.getItem('cars')) || []);
+    const[search, setSearch] = useState('');
     
     useEffect(() => {
       const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
@@ -44,11 +46,23 @@ const loadedCars = JSON.parse(localStorage.getItem('cars')) || [];
 
         <div className="landing-page-filter">
             <span>Sort</span>
-            <select id="select-filter">
+            <select id="select-filter" onChange={SortCars}>
               <option value="Default">Default</option>
               <option value="Mark">Mark</option>
-              <option value="Model">Model Year</option>
+              <option value="Model">Model</option>
             </select>
+            <input
+              type="text"
+              id="mark-input"
+              placeholder="Enter Car Mark"
+              className="hidden"
+            />
+            <input
+              type="text"
+              id="model-input"
+              placeholder="Enter Car Model"
+              className="hidden"
+            />
         </div>
         
         <div className="cars-card-container">

@@ -67,5 +67,3 @@ export function addCarOnButtonClick(e, navigate, onAddCar){
         navigate('/landing-page');
     }, 2000);
 }
-
-//evenutalno deelte dodaj na kraju
